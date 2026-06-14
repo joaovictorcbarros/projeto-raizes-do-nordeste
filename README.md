@@ -3,7 +3,7 @@
 Este Projeto Multidisciplinar foi desenvolvido para atender às demandas de uma rede de lanchonetes em expansão. A aplicação tem como foco fornecer uma interface clara, coerente e otimizada para múltiplos canais de atendimento.
 
 
-##  Funcionalidades e Requisitos Atendidos
+##  Funcionalidades e Requisitos
 
 A interface foi projetada para garantir uma excelente jornada do usuário, contemplando as seguintes regras de negócio:
 
@@ -43,4 +43,8 @@ Para testar os fluxos principais do projeto, sem a necessidade de criar um cadas
 3. No Pop-up que abrir, selecione um dos perfis já pré-configurados **(João ou Anne)** e por fim clique em **Entrar**.
 4. Navegue pelas opções de cardápio, fidelidade, carrinho e simulação de pagamento, do checkout até a entrega do pedido.
 
-**[Para testar o projeto clique aqui](COLE_SEU_LINK_DO_GITHUB_PAGES_AQUI)**
+
+##  Como acessar o projeto? 
+
+[Acesse o projeto clicando aqui](https://joaovictorcbarros.github.io/projeto-raizes-do-nordeste/)
+
