@@ -1,0 +1,248 @@
+/* Estilo inicial do Cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #d9ae75; 
+    border-bottom: 2.5px solid #decaaf;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    
+    /* Menu Fixo: */
+    position: -webkit-sticky; /* Para funcionar nos iPhones/Safari */
+    position: sticky;         /* Para os outros navegadores */
+    top: 0;
+    z-index: 999;
+}
+
+.header-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px; 
+}
+
+.logo-image { 
+    height: 100px; 
+    width: auto;    
+}
+
+.header-center {
+    flex: 2; 
+    display: flex;
+    justify-content: center;
+    gap: 45px; 
+}
+
+.header-right {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Ícones do Menu */
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #354790; 
+    cursor: pointer;
+    font-size: 24px; 
+    position: relative;
+    transition: transform 0.2s, color 0.2s; 
+}
+
+.nav-item:hover { 
+    transform: scale(1.04); 
+    color: #111654; 
+}
+
+.nav-item span { 
+    font-size: 14px;
+    padding-top: 2px;
+}
+
+.nav-item span:hover { 
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.nav-item.active { 
+    color: #111654; 
+}
+
+/* Ícones Pesonalizados */
+.nav-item .custom-icon {
+    width: 24px; 
+    height: 24px;
+    background-color: #354790;
+    transition: transform 0.2s, background-color 0.2s; 
+    display: inline-block;
+}
+
+.icon-fidelidade {
+    -webkit-mask: url('../img/icone-fidelidade.svg') no-repeat center / contain;
+    mask: url('../img/icone-fidelidade.svg') no-repeat center / contain;
+}
+
+.nav-item:hover .custom-icon {
+    background-color: #111654; 
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.nav-item.active .custom-icon {
+    background-color: #111654; 
+}
+
+/* Menu Hambúrguer */
+.menu-icon {
+    display: none !important;
+    font-size: 32px;
+    color: #354790;
+    cursor: pointer;
+}
+
+/* Notificação - Status do Pedido */
+.notification-dot {
+    position: absolute; 
+    top: 1px;
+    right: 0px;
+    width: 12px; 
+    height: 12px; 
+    background-color: #ff3b30;
+    border-radius: 50%;
+    border: 2px solid #d9ae75; 
+}
+
+.status-bell i.fa-bell { color: #354790; }
+
+@keyframes pulse-bell {
+    0% { color: #354790; transform: scale(1) !important; }
+    50% { color: #111654; transform: scale(1.04) !important; }
+    100% { color: #354790; transform: scale(1) !important; }
+}
+.pulsing-bell i.fa-bell { animation: pulse-bell 1.2s infinite ease-in-out; }
+
+/* Status Dropdown */
+.status-dropdown {
+    position: absolute; 
+    top: 50px; 
+    right: -15px;
+    width: 230px; background-color: #FAF8F5; 
+    border: 2px solid #003b73; border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    z-index: 1000; cursor: default; text-align: left;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Estilos da Seta antes para cima, e do Dropdown */
+.status-dropdown::before {
+    content: ""; 
+    position: absolute; 
+    top: -10px; 
+    right: 15px; 
+    border-width: 0 10px 10px 10px; 
+    border-style: solid;
+    border-color: transparent transparent #003b73 transparent;
+}
+
+.dropdown-header {
+    background-color: #003b73; 
+    color: #fff;
+    padding: 6px 12px; 
+    font-size: 14px; font-weight: bold;
+}
+
+.dropdown-body { padding: 12px; }
+.dropdown-body hr { margin: 10px 0;
+    border: none;
+    border-top: 1px solid #ccc; 
+}
+
+.order-details .detail-line {
+    font-size: 14px; 
+    margin-bottom: 5px; 
+    pointer-events: none;
+}
+.order-details .detail-line strong { 
+    font-weight: 800 !important;
+    color: #354790 !important; 
+}
+
+.order-details .detail-line span { 
+    font-weight: 600 !important; 
+    color: #666666 !important; 
+}
+
+.order-progress {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 8px;
+    font-size: 15px; 
+    margin-top: 15px;
+}
+
+/* Responsividade (Tablet e Mobile) */
+@media (max-width: 1024px) {
+    .header-center { gap: 35px; } 
+    .header-right { gap: 40px; }
+    .logo-image { height: 80px; }
+}
+
+@media (max-width: 768px) {
+    .header-center { 
+        display: none; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #d9ae75;
+        flex-direction: column;
+        padding: 10px 0 0 0; 
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        z-index: 100;
+        gap: 0; 
+    }
+
+    .header-center.show-menu {
+        display: flex;
+    }
+
+    .header-center .nav-item {
+        flex-direction: row;
+        gap: 15px;
+        padding: 15px 30px;
+        justify-content: flex-start;
+        align-items: center;
+        border-bottom: 1px solid #decaaf;
+    }
+
+    .header-center .nav-item:last-child {
+        border-bottom: none;
+    }
+    
+    .header-center .nav-item span {
+        display: block; 
+        font-size: 15px; 
+        margin-top: 0;
+    }
+
+    .desktop-only { display: none !important; }
+    .mobile-only { display: flex !important; }
+    
+    .status-bell { display: flex !important; }
+    .header-right .status-bell span { display: none; }
+
+    .header-right .status-bell .status-dropdown span { 
+        display: inline-block !important; 
+    }
+
+    .menu-icon { display: block !important; }
+    
+    .logo-image { height: 70px; }
+}

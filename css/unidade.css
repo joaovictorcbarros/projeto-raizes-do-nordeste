@@ -1,0 +1,280 @@
+/* Estilo inicial da Unidade com Cardápio Dinâmico */
+.main-content-fluid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*  Seção - Unidades */
+.locations-wrapper {
+    background-color: #FFFFFF;
+    width: 100%;
+    padding: 50px 25px;
+}
+
+.locations-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-top-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-bottom: 15px;
+    margin-top: -25px;
+    color: #5f3a26; 
+}
+
+.custom-unidade-icon {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background-color: #5f3a26; 
+    -webkit-mask-image: url('../img/icone-unidades.svg');
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url('../img/icone-unidades.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+
+.section-top-title .header-icon {
+    font-size: 26px;
+}
+
+.locations-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.location-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 25px 0;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.location-row:last-child {
+    border-bottom: none;
+}
+
+.loc-card-box {
+    background-color: #f7ede2; 
+    padding: 20px;
+    border-radius: 12px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.loc-card-top {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 10px;
+    width: 100%; 
+}
+
+.icon-green {
+    color: #107c10; 
+    font-size: 20px;
+}
+
+.title-blue {
+    color: #2b4594;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.loc-btn {
+    background-color: #5f3a26; 
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.loc-btn:hover {
+    background-color: #3e2518;
+}
+
+.loc-text-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 7px;
+}
+
+.loc-text-details p {
+    color: #333;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+/* Seção - Cardápio */
+.menu-grid-wrapper {
+    background-color: #FAF8F5;
+    width: 100%;
+    padding: 50px 15px;
+    scroll-margin-top: 80px;
+}
+
+.menu-container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+/* Título, Ícone e Divisor Empilhados */
+.menu-header-stacked {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.menu-main-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #5f3a26;
+    margin-bottom: 15px;
+}
+
+.menu-icon-box {
+    font-size: 36px;
+    color: #5f3a26;
+    margin-bottom: 20px;
+}
+
+.menu-divider-bottom {
+    width: 80%;
+    max-width: 880px;
+    height: 1px;
+    background-color: #5f3a26;
+    border-radius: 2px;
+}
+
+/* Lista Vertical de Produtos */
+.product-list-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; 
+    width: 100%;
+}
+
+.product-card-horizontal {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex; 
+    width: 100%;
+    max-width: 800px; 
+    height: 180px; 
+}
+
+.product-card-horizontal .product-img {
+    width: 250px; 
+    height: 100%;
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.product-card-horizontal .product-info {
+    padding: 25px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.product-card-horizontal h4 {
+    color: #333;
+    font-size: 20px;
+    margin: 0;
+}
+
+.product-card-horizontal .product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-card-horizontal .product-price {
+    font-weight: bold;
+    font-size: 18px;
+    color: #8B4513;
+}
+
+.product-card-horizontal .add-btn {
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.product-card-horizontal .add-btn:hover {
+    background-color: #5A2B15;
+}
+
+/*  Responsividade (Tablet e Mobile) */
+@media (max-width: 768px) {
+    .menu-main-title {
+        font-size: 36px; 
+    }
+    
+    .menu-icon-box {
+        font-size: 35px; 
+        margin-bottom: 15px;
+    }
+
+    .menu-grid-wrapper {
+        padding: 50px 25px; 
+        scroll-margin-top: 50px;
+    }
+
+    .product-card-horizontal {
+        flex-direction: column; 
+        height: auto; 
+    }
+
+    .product-card-horizontal .product-img {
+        width: 100%; 
+        height: 200px; 
+    }
+
+    .product-card-horizontal .product-info {
+        padding: 15px; 
+        gap: 15px;
+    }
+
+    .location-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .loc-card-box {
+        width: 100%;
+    }
+}

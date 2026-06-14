@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes do Nordeste - Cadastrar</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/cadastrar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="cadastrar-body">
+
+    <div class="cadastrar-wrapper">
+        <div class="cadastrar-card">
+            
+            <img src="img/logo-raizes-nordeste.png" alt="Raízes do Nordeste" class="cadastrar-logo">
+            <h2 class="welcome-text">Crie sua conta e venha saborear</h2>
+
+            <form onsubmit="simularCadastro(event)">
+                
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="nome-cadastro" placeholder="Nome Completo" maxlength="60" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email-cadastro" placeholder="E-mail" maxlength="80" required>
+                </div>
+ 
+                <div class="input-group">
+                    <i class="fas fa-key"></i>
+                    <input type="password" id="senha-cadastro" placeholder="Crie uma Senha" minlength="8" maxlength="64" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="text" id="data-cadastro" onfocus="(this.type='date')" placeholder="Data de Nascimento">
+                </div>
+                <p class="info-text">*Ganhe 15% de desconto no seu aniversário.</p>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">Ao clicar em cadastrar, você aceita os <a href="#">Termos</a> e as <a href="#">Políticas de Privacidade</a></label>
+                </div>
+
+                <button type="submit" class="cadastrar-btn">Cadastrar</button>
+                
+                <div class="ou-text">ou</div>
+                
+                <button type="button" class="cadastrar-btn btn-secondary" onclick="window.location.href='login.html'">Entrar</button>
+
+            </form>
+
+            <div class="cadastrar-lgpd">
+                <i class="fas fa-lock"></i>
+                <span>todos os seus dados são protegidos</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/cadastrar.js"></script>
+</body>
+</html>

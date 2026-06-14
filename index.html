@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja Bem vindo a Raízes do Nordeste - A autêntica culinária nordestina</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <header class="header">
+            <div class="header-left">
+                <i id="hamburger-icon" class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+                <img src="img/logo-raizes-nordeste.png" alt="Raízes do Nordeste" class="logo-image">
+
+            </div>
+
+            <div class="header-center" id="mobile-menu">
+                <div class="nav-item active" onclick="window.location.href='index.html'">
+                    <i class="fas fa-home"></i>
+                    <span>Início</span>
+                </div>
+                <div class="nav-item" onclick="window.location.href='fidelidade.html'">
+                    <span class="custom-icon icon-fidelidade"></span>
+                    <span>Fidelidade</span>
+                </div>
+                <div class="nav-item" onclick="window.location.href='carrinho.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Carrinho</span>
+                </div>
+                <div class="nav-item" onclick="window.location.href='conta.html'">
+                    <i class="fas fa-user"></i>
+                    <span>Conta</span>
+                </div>
+                <div class="nav-item mobile-only" onclick="window.location.href='login.html'">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrar</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="nav-item desktop-only entrar-btn" onclick="window.location.href='login.html'">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrar</span>
+                </div>
+                <div class="nav-item status-bell" id="bell-container"
+                    style="position: relative; flex-direction: row; gap: 8px; justify-content: center; align-items: center;">
+                    <div id="bell-icon-wrapper" style="position: relative;">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-dot" id="notif-dot" style="display: none;"></span>
+                    </div>
+
+                    <div class="status-dropdown" id="status-dropdown" style="display: none;">
+                        <div class="dropdown-header">Status</div>
+                        <div class="dropdown-body">
+                            <strong
+                                style="display: block; text-align: center; margin-bottom: 5px; font-size: 18px; color: #24326c;">Pedidos
+                                Recebidos</strong>
+                            <hr>
+                            <div class="order-details">
+                                <div class="detail-line"><strong>Pedido:</strong> <span>#173120</span></div>
+                                <div class="detail-line"><strong>Pratos:</strong> <span id="status-pratos">0</span>
+                                </div>
+
+                                <div class="detail-line"><strong>Valor Total:</strong> <span id="status-total">R$
+                                    0,00</span>
+                                </div>
+                                
+                                <div class="detail-line" id="linha-pago" style="display: none;"><strong>Valor
+                                    Pago:</strong> <span id="status-pago">R$ 0,00</span>
+                                </div>
+                                
+                                <div class="detail-line" id="linha-troco" style="display: none;"><strong>Seu
+                                    troco:</strong> <span id="status-troco">R$ 0,00</span>
+                                </div>
+                                <div class="detail-line"><strong>Retirado(a) por:</strong> <span
+                                    id="status-nome">Cliente</span>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="order-progress" id="order-progress">
+                                <i class="fas fa-fire" style="color: #f2a900;"></i>
+                                <span style="font-weight: bold; color: #555;">Em preparo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero-section">
+            <div class="hero-banner">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Raízes do Nordeste</h1>
+                    <p class="hero-subtitle">A autêntica culinária Nordestina</p>
+                </div>
+            </div>
+            <div class="location-wrapper">
+                <button class="location-btn" onclick="window.location.href='unidade.html'">
+                    <img src="img/icone-localizacao.svg" alt="Localização" class="custom-btn-icon">
+                    Unidades com cardápio dinâmico
+                </button>
+            </div>
+        </section>
+
+        <div class="content-blur-backdrop">
+
+            <div class="huge-spacer"></div>
+
+            <main class="main-content">
+                <section class="promos-section section-box">
+                    <div class="section-title">
+                        <span class="custom-icon icon-oferta"></span>
+                        <h3>Raízes Ofertas - Promo da semana</h3>
+                    </div>
+                    <div class="carousel-container">
+                        <div class="carousel">
+                            <div class="card">
+                                <div class="card-img" style="background-image: url('img/baiao-de-dois.png');">
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-name">Baião de Dois</span>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="price">R$ 35,00</span>
+                                    <button class="btn-text-add"
+                                        onclick="adicionarPromoAoCarrinho('p1', 'Baião de Dois', 35.00, 'img/baiao-de-dois.png')">
+                                        <i class="fas fa-shopping-cart"></i> Adicionar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-img" style="background-image: url('img/pizza-regional-mini.jpg');">
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-name">Pizza Regional Mini</span>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="price">R$ 5.00</span>
+                                    <button class="btn-text-add"
+                                        onclick="adicionarPromoAoCarrinho('p2', 'Pizza Regional Mini', 5.00, 'img/pizza-regional-mini.jpg')">
+                                        <i class="fas fa-shopping-cart"></i> Adicionar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-img" style="background-image: url('img/espetinho-misto.jpg');">
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-name">Espetinho Misto</span>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="price">R$ 18,90</span>
+                                    <button class="btn-text-add"
+                                        onclick="adicionarPromoAoCarrinho('p3', 'Espetinho Misto', 18.90, 'img/espetinho-misto.jpg')">
+                                        <i class="fas fa-shopping-cart"></i> Adicionar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-img" style="background-image: url('img/carne-sol-macaxeira.png');">
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-name">Carne de Sol com Macaxeira</span>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="price">R$ 25,00</span>
+                                    <button class="btn-text-add"
+                                        onclick="adicionarPromoAoCarrinho('p4', 'Carne de Sol com Macaxeira', 25.00, 'img/carne-sol-macaxeira.png')">
+                                        <i class="fas fa-shopping-cart"></i> Adicionar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-img" style="background-image: url('img/cuscuz-nordestino.png');">
+                                </div>
+                                <div class="card-body">
+                                    <span class="product-name">Cuscuz Nordestino</span>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="price">R$ 12,00</span>
+                                    <button class="btn-text-add"
+                                        onclick="adicionarPromoAoCarrinho('p5', 'Cuscuz Nordestino', 12.00, 'img/cuscuz-nordestino.png')">
+                                        <i class="fas fa-shopping-cart"></i> Adicionar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="parallax-gap"></div>
+
+                <section class="highlights-section section-box">
+                    <div class="section-title">
+                        <i class="fa-solid fa-fire"></i>
+                        <h3>Mais Pedidos</h3>
+                    </div>
+                    <div class="grid-container">
+                        <div class="card">
+                            <div class="card-img" style="background-image: url('img/hamburguer-nordestino.jpg');">
+                            </div>
+                            <div class="card-body">
+                                <span class="product-name">Hambúrguer Nordestino</span>
+                                <p class="product-desc">Hambúrguer artesanal nordestino duplo no pão de brioche, feito
+                                    com carne de sol, queijo de coalho derretido, molho de manteiga de garrafa e salada.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="price">R$ 15,90</span>
+                                <button class="btn-text-add"
+                                    onclick="adicionarNormalAoCarrinho('m1', 'Hambúrguer Nordestino', 15.90, 'img/hamburguer-nordestino.jpg')">
+                                    <i class="fas fa-shopping-cart"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-img" style="background-image: url('img/porcao-macaxeira.png');">
+                            </div>
+                            <div class="card-body">
+                                <span class="product-name">Porção de Macaxeira Frita e Cajuina</span>
+                                <p class="product-desc">Uma porção de macaxeira frita, acompanhada de cajuína gelada.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="price">R$ 25,90</span>
+                                <button class="btn-text-add"
+                                    onclick="adicionarNormalAoCarrinho('m2', 'Porção de Macaxeira Frita e Cajuina', 25.90, 'img/porcao-macaxeira.png')">
+                                    <i class="fas fa-shopping-cart"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-img"
+                                style="background-image: url('img/tapioca-carne-e-pao-de-queijo.png');">
+                            </div>
+                            <div class="card-body">
+                                <span class="product-name">Tapioca Recheada e Pães de Queijo</span>
+                                <p class="product-desc">Tapioca recheada com carne de sol e queijo derretido, decorada
+                                    com coentro e acompanhada de uma porção de pães de queijo.</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="price">R$ 25,00</span>
+                                <button class="btn-text-add"
+                                    onclick="adicionarNormalAoCarrinho('m3', 'Tapioca Recheada e Pães de Queijo', 25.00, 'img/tapioca-carne-e-pao-de-queijo.png')">
+                                    <i class="fas fa-shopping-cart"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="parallax-gap"></div>
+
+                <section class="review-section section-box">
+                    <div class="section-title">
+                        <i class="fa-solid fa-comment"></i>
+                        <h3>O que estão falando de nós</h3>
+                    </div>
+
+                    <div class="review-content" id="review-container">
+
+                        <div class="user-profile">
+                            <img src="img/cliente-anne.jpg" alt="Foto de Anne Doe" class="user-avatar"
+                                id="review-avatar">
+                            <h4 id="review-name">Anne Doe</h4>
+                        </div>
+
+                        <div class="user-text">
+                            <p id="review-text">"Excelente ambiente! As comidas consumidas no próprio local chegam
+                                quentinhas e o tempero lembra muito a comida de vó. Atendimento impecável."</p>
+                            <div class="review-stars" id="review-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="lgpd-section">
+                    <div class="lgpd-badge">
+                        <i class="fas fa-lock"></i>
+                        <span>todos seus dados são protegidos</span>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <div class="footer-container">
+                    <div class="footer-col-left footer-nav">
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="unidade.html">Unidades</a></li>
+                            <li><a href="fidelidade.html">Fidelidade</a></li>
+                            <li><a href="carrinho.html">Carrinho</a></li>
+                            <li><a href="conta.html">Conta</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col-center footer-brand">
+                        <img src="img/logo-raizes-nordeste.png" alt="Raízes do Nordeste" class="footer-logo-image">
+                    </div>
+
+                    <div class="footer-col-right footer-contact">
+                        <h4>Contato e Local</h4>
+                        <ul>
+                            <li><i class="fas fa-clock"></i> Seg - Dom: 09h30 às 21h30</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Rua das Rendeiras, 123 - Centro</li>
+                            <li><i class="fab fa-whatsapp"></i> (85) 99999-1111</li>
+                            <li><i class="fas fa-mobile-alt"></i> Disponível no App, Site e Totem</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>Copyright &copy; 2026 Raízes do Nordeste. Todos os direitos reservados.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/header.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>

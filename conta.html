@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes do Nordeste - Minha Conta</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/conta.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <header class="header">
+            <div class="header-left">
+                <i id="hamburger-icon" class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+                <img src="img/logo-raizes-nordeste.png" alt="Raízes do Nordeste" class="logo-image">
+
+            </div>
+
+            <div class="header-center" id="mobile-menu">
+                <div class="nav-item" onclick="window.location.href='index.html'">
+                    <i class="fas fa-home"></i>
+                    <span>Início</span>
+                </div>
+                <div class="nav-item" onclick="window.location.href='fidelidade.html'">
+                    <span class="custom-icon icon-fidelidade"></span>
+                    <span>Fidelidade</span>
+                </div>
+                <div class="nav-item" onclick="window.location.href='carrinho.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Carrinho</span>
+                </div>
+                <div class="nav-item active" onclick="window.location.href='conta.html'">
+                    <i class="fas fa-user"></i>
+                    <span>Conta</span>
+                </div>
+                <div class="nav-item mobile-only" onclick="window.location.href='login.html'">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrar</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="nav-item desktop-only entrar-btn" onclick="window.location.href='login.html'">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrar</span>
+                </div>
+                <div class="nav-item status-bell">
+                    <i class="fas fa-bell"></i>
+                </div>
+            </div>
+        </header>
+
+        <main class="conta-main-content">
+            <div class="conta-container">
+
+                <h2 class="conta-title">Conta</h2>
+
+                <div class="conta-content-wrapper">
+
+                    <div class="conta-card profile-card">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user" id="icone-padrao"></i>
+                            <img src="" id="foto-perfil" alt="Foto de Perfil"
+                                style="display: none; width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        </div>
+
+                        <div class="profile-info">
+                            <p class="field-group">
+                                <strong>Apelido:</strong>
+                                <input type="text" id="input-apelido" class="conta-input" maxlength="20"
+                                    placeholder="Digite seu apelido" readonly>
+                            </p>
+                            <p class="hint-text">*O apelido aparece quando logar</p>
+                        </div>
+                        <a href="#" class="edit-link">editar</a>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="section-group">
+                        <h3 class="section-subtitle">Dados pessoais</h3>
+
+                        <div class="conta-card data-card">
+                            <div class="data-list">
+                                <p class="field-group">
+                                    <strong>Nome Completo:</strong>
+                                    <input type="text" id="conta-nome" class="conta-input full" maxlength="60"
+                                        placeholder="Seu nome completo">
+                                </p>
+
+                                <p class="field-group">
+                                    <strong>CPF:</strong>
+                                    <input type="text" id="conta-cpf" class="conta-input short" maxlength="14"
+                                        placeholder="000.000.000-00" oninput="mascaraCpfConta(this)">
+                                </p>
+
+                                <p class="field-group">
+                                    <strong>Telefone:</strong>
+                                    <input type="tel" id="conta-telefone" class="conta-input medium" maxlength="15"
+                                        placeholder="(85) 00000-0000" oninput="mascaraTelefone(this)">
+                                </p>
+
+                                <p class="field-group">
+                                    <strong>E-mail:</strong>
+                                    <input type="email" id="conta-email" class="conta-input full" maxlength="50"
+                                        placeholder="exemplo@email.com">
+                                </p>
+
+                                <p class="field-group">
+                                    <strong>Data de Aniversário:</strong>
+                                    <input type="date" id="conta-data" class="conta-input short">
+                                </p>
+
+                                <p class="field-group">
+                                    <strong>Endereço:</strong>
+                                    <input type="text" id="conta-endereco" class="conta-input full" maxlength="100"
+                                        placeholder="Rua, número, bairro e complemento">
+                                </p>
+                            </div>
+                            <a href="#" class="edit-link">editar</a>
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="section-group">
+                            <h3 class="section-subtitle">Programa de Fidelidade</h3>
+
+                            <div class="conta-card action-card">
+                                <div class="action-content">
+                                    <i class="fas fa-tags icon-orange"></i>
+                                    <a href="fidelidade.html" class="action-link">Ver meus "Saldos e Cupons"</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="section-group">
+                            <h3 class="section-subtitle">Ação da Conta</h3>
+
+                            <div class="conta-card action-card">
+                                <div class="action-content">
+                                    <div class="icon-with-badge">
+                                        <i class="fas fa-user icon-brown"></i>
+                                        <i class="fas fa-times badge-cross"></i>
+                                    </div>
+                                    <a href="#" class="action-link" onclick="excluirConta()">Excluir Conta</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="security-badge">
+                            <i class="fas fa-lock"></i>
+                            <span>todos seus dados são protegidos</span>
+                        </div>
+
+                    </div>
+                </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-col-left footer-nav">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="unidade.html">Unidades</a></li>
+                        <li><a href="fidelidade.html">Fidelidade</a></li>
+                        <li><a href="carrinho.html">Carrinho</a></li>
+                        <li><a href="conta.html">Conta</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col-center footer-brand">
+                    <img src="img/logo-raizes-nordeste.png" alt="Raízes do Nordeste" class="footer-logo-image">
+                </div>
+
+                <div class="footer-col-right footer-contact">
+                    <h4>Contato e Local</h4>
+                    <ul>
+                        <li><i class="fas fa-clock"></i> Seg - Dom: 09h30 às 21h30</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Rua das Rendeiras, 123 - Centro</li>
+                        <li><i class="fab fa-whatsapp"></i> (85) 99999-1111</li>
+                        <li><i class="fas fa-mobile-alt"></i> Disponível no App, Site e Totem</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2026 Raízes do Nordeste. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/header.js"></script>
+    <script src="js/conta.js"></script>
+</body>
+
+</html>

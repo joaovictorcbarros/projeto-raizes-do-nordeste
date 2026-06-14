@@ -1,0 +1,550 @@
+/* Estilo inicial do Carrinho */
+.cart-main-content {
+    background-color: #FAF8F5;
+    width: 100%;
+    padding: 40px 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.cart-container {
+    width: 100%;
+    max-width: 750px; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0 auto; 
+}
+
+/* Cabeçalhos do Carrinho */
+.cart-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 40px; 
+}
+
+.cart-title {
+    font-size: 32px;
+    color: #5f3a26;
+    font-weight: bold;
+}
+
+/* Botão Limpar no topo */
+.clear-cart-btn {
+    position: absolute;
+    right: 0;
+    bottom: -84px;
+    background-color: #8b4513;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 15px; 
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.clear-cart-btn:hover {
+  background-color: #5A2B15;
+}
+
+.section-subtitle {
+    font-size: 20px;
+    color: #5f3a26;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+/* Divisor Horizontal */
+.divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+    width: 100%;
+}
+
+/* Lista de Itens */
+.cart-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.cart-item-card {
+    background-color: #f7ede2;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.item-image {
+    width: 200px;
+    height: 150px;
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.item-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.item-details h4 {
+    color: #333;
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+.item-price {
+    font-weight: bold;
+    color: #8B4513;
+    font-size: 16px;
+}
+
+/* Controles de Quantidade */
+.item-actions {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-right: 20px;
+}
+
+.qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+}
+
+.icon-minus { color: #d32f2f; cursor: pointer; }
+.icon-plus { color: #2e7d32; cursor: pointer; }
+
+.qty-number {
+    font-size: 19px;
+    font-weight: bold;
+    color: #8B4513;
+    min-width: 25px;
+    text-align: center;
+}
+
+.icon-trash {
+    color: #8B4513;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Seção - Cupom */
+.cart-coupon-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.coupon-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.coupon-input-group input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid #5f3a26;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: transparent;
+    color: #5f3a26;
+}
+
+.apply-btn {
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.apply-btn:hover{ 
+    background-color: #5A2B15;
+    color: white;
+}
+
+.coupon-hint {
+    font-size: 12px;
+    color: #5f3a26;
+    font-weight: bold;
+}
+
+/* Seção - (Toggle) CoinsRaízes */
+.cart-coins-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7ede2;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1.5px solid #e5cdab;
+    margin-top: 5px;
+}
+
+.coins-info-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.coin-icon-circle {
+    background-color: #126327;
+    color: #ffeb3b;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.coins-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.coins-text strong {
+    color: #5f3a26;
+    font-size: 16px;
+}
+
+.coins-text span {
+    color: #8b4513;
+    font-size: 12px;
+}
+
+/* Botão Interruptor (Toggle) */
+.switch-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.switch-toggle input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider-toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider-toggle:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+.switch-toggle input:checked + .slider-toggle {
+    background-color: #126327;
+}
+
+.switch-toggle input:checked + .slider-toggle:before {
+    transform: translateX(24px);
+}
+
+.slider-toggle.round {
+    border-radius: 34px;
+}
+
+.slider-toggle.round:before {
+    border-radius: 50%;
+}
+
+/* Seção - Resumo Financeiro */
+.cart-summary-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    color: #5A2B15;
+    font-size: 15px;
+}
+
+.discount-row { color: #8B4513; }
+
+.total-row {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 5px;
+    border-top: 1px dashed #ccc;
+    padding-top: 10px;
+}
+
+/* Balão de Recompensas - Coins Raízes(CashBack) */
+.coins-reward-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    background-color: #9fa531;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.coin-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: #126327;
+    color: #ffeb3b;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.coins-reward-box span {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Seção - Observação */
+.cart-observation-section textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #5f3a26;
+    border-radius: 6px;
+    background-color: transparent;
+    font-family: inherit;
+    resize: vertical;
+    color: #5f3a26;
+}
+
+/* Seção - Retirada e Entrega */
+.delivery-toggle {
+    display: flex;
+    border: 3px solid #5f3a26;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background-color: transparent;
+    color: #5f3a26;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.toggle-btn.active {
+    background-color: #5f3a26;
+    color: white;
+}
+
+.delivery-info-box {
+    background-color: #f7ede2;
+    border: 2px solid #5f3a26;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-green { color: #107c10; font-size: 24px; }
+.icon-blue { color: #2b4594; font-size: 24px; }
+
+.info-text p, .info-text strong {
+    color: #333;
+    margin: 2px 0;
+    font-size: 14px;
+}
+
+/* Seção - Pagamento */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #8B4513;
+    font-weight: lighter;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.radio-label input[type="radio"] {
+    accent-color: #8B4513;
+    width: 18px;
+    height: 18px;
+}
+
+.checkout-main-btn {
+    display: flex;
+    justify-content: center;
+    background-color: #5f3a26;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    transition: background 0.2s;
+}
+
+.checkout-main-btn:hover {
+    background-color: #8B4513;
+}
+
+/* Selo de Segurança (LGPD) */
+.security-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    background-color: #E8F5E9;
+    border: 3.5px solid #236526;
+    color: #2E7D32;
+    padding: 15px 25px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    gap: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.security-badge i {
+    font-size: 26px;
+}
+
+.badge-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.coupon-input-group input:focus,
+.cart-observation-section textarea:focus {
+    outline: none; 
+    border-color: #8B4513; 
+    box-shadow: 0 0 5px rgba(139, 69, 19, 0.4); 
+}
+
+/* Responsiviade (Tablet e Mobile) */
+@media (max-width: 800px) {
+    .cart-main-content {
+        padding: 50px 25px;
+    }
+    
+    .item-image {
+        width: 150px; 
+        height: 120px;
+    }
+    
+    .cart-item-card {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .security-badge {
+        flex-direction: row;
+        padding: 10px 20px;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 550px) {
+    .cart-item-card {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .item-image {
+        width: 100%;
+        height: 220px;
+    }
+
+    .item-details {
+        width: 100%;
+        padding: 10px 10px 0 10px;
+    }
+
+    .item-actions {
+        margin-top: 15px;
+        padding: 0 10px 10px 10px;
+    }
+
+    .delivery-info-box {
+        padding: 15px 10px;
+    }
+
+    .info-row {
+        align-items: flex-start;
+    }
+
+    .coins-reward-box {
+        flex-direction: row;
+        text-align: center;
+        border-radius: 15px;
+        padding: 10px 20px;
+    }
+
+    .security-badge {
+        flex-direction: row;
+        padding: 10px 15px;
+        gap: 10px;
+    }
+}

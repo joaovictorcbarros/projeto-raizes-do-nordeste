@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes do Nordeste - Carrinho</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/carrinho.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <header class="header">
+            <div class="header-left">
+                <i id="hamburger-icon" class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+                <img src="img/logo-raizes-nordeste.png" alt="Raízes do Nordeste" class="logo-image">
+
+            </div>
+
+            <div class="header-center" id="mobile-menu">
+                <div class="nav-item" onclick="window.location.href='index.html'">
+                    <i class="fas fa-home"></i>
+                    <span>Início</span>
+                </div>
+                <div class="nav-item" onclick="window.location.href='fidelidade.html'">
+                    <span class="custom-icon icon-fidelidade"></span>
+                    <span>Fidelidade</span>
+                </div>
+                <div class="nav-item active" onclick="window.location.href='carrinho.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Carrinho</span>
+                </div>
+                <div class="nav-item" onclick="window.location.href='conta.html'">
+                    <i class="fas fa-user"></i>
+                    <span>Conta</span>
+                </div>
+                <div class="nav-item mobile-only" onclick="window.location.href='login.html'">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrar</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="nav-item desktop-only entrar-btn" onclick="window.location.href='login.html'">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrar</span>
+                </div>
+                <div class="nav-item status-bell">
+                    <i class="fas fa-bell"></i>
+                </div>
+            </div>
+        </header>
+
+        <main class="cart-main-content">
+            <div class="cart-container">
+
+                <div class="cart-header">
+                    <h2 class="cart-title">Carrinho</h2>
+                    <button id="btn-limpar-voltar" class="clear-cart-btn">Limpar</button>
+                </div>
+
+                <div id="empty-cart-message"
+                    style="display: none; text-align: center; background-color: #f7ede2; border-radius: 12px; padding: 40px;">
+                    <h3 style="color: #5f3a26; margin-bottom: 10px;">Seu carrinho está vazio.</h3>
+                    <p style="color: #8b4513; margin-bottom: 20px;">Que tal navegar pelo nosso cardápio?</p>
+                    <span style="font-size: 40px; color: #b38b75;">:'(</span>
+                </div>
+
+                <h3 class="section-subtitle toggle-visibility">Resumo do pedido</h3>
+
+                <div class="cart-items-list toggle-visibility">
+                </div>
+
+                <hr class="divider toggle-visibility">
+
+                <div class="cart-coupon-section toggle-visibility">
+                    <div class="coupon-input-group">
+                        <input type="text" placeholder="ADICIONAR CUPOM">
+                        <button class="apply-btn">Aplicar</button>
+                    </div>
+                    <span class="coupon-hint">*Cupom de aniversário aplicado 15%</span>
+                </div>
+
+                <div class="cart-coins-section toggle-visibility" id="coins-toggle-section" style="display: none;">
+                    <div class="coins-info-wrapper">
+                        <div class="coin-icon-circle">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="coins-text">
+                            <strong>Saldo CoinsRaízes</strong>
+                            <span>*<span id="valor-saldo-disponivel">R$ 0,00</span> disponível</span>
+                        </div>
+                    </div>
+                    <label class="switch-toggle">
+                        <input type="checkbox" id="usar-coins-check" onchange="atualizarResumo()">
+                        <span class="slider-toggle round"></span>
+                    </label>
+                </div>
+
+                <hr class="divider toggle-visibility">
+
+                <div class="cart-summary-section toggle-visibility">
+                    <h3 class="section-subtitle">Resumo</h3>
+
+                    <div class="summary-row">
+                        <span>Sub Total</span>
+                        <span>R$ 0,00</span>
+                    </div>
+
+                    <div class="summary-row frete-row" style="display: none">
+                        <span>Frete</span>
+                        <span>R$ 10,00</span>
+                    </div>
+
+                    <div class="summary-row discount-row" style="display: none;">
+                        <span>*Cupom aplicado</span>
+                        <span>- R$ 0,00</span>
+                    </div>
+
+                    <div class="summary-row discount-row" id="coins-discount-row"
+                        style="display: none; color: #496d21;">
+                        <span>*Saldo CoinsRaízes aplicado</span>
+                        <span>- R$ 0,00</span>
+                    </div>
+
+                    <div class="summary-row total-row">
+                        <span>Total</span>
+                        <span>R$ 0,00</span>
+                    </div>
+                </div>
+
+                <div class="coins-reward-box toggle-visibility">
+                    <div class="coin-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <span>Obtenha <b>R$ 4,25</b> em <b>CoinsRaízes</b> com essa compra.</span>
+                </div>
+
+                <hr class="divider toggle-visibility">
+
+                <div class="cart-observation-section toggle-visibility">
+                    <textarea placeholder="Observação para cozinha..." rows="3"></textarea>
+                </div>
+
+                <hr class="divider toggle-visibility">
+
+                <div class="cart-delivery-section toggle-visibility">
+                    <div class="delivery-toggle">
+                        <button id="btn-retirar" class="toggle-btn active">Retirar</button>
+                        <button id="btn-entregar" class="toggle-btn">Entregar</button>
+                    </div>
+
+                    <div class="delivery-info-box">
+                        <div class="info-row">
+                            <i class="fas fa-map-marker-alt icon-green"></i>
+                            <div class="info-text" id="delivery-address-text">
+                                <strong>Local de Retirada:</strong>
+                                <p>Unidade Centro - Rua das Rendeiras, 123</p>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <i class="far fa-clock icon-blue"></i>
+                            <div class="info-text" id="delivery-time-text">
+                                <p>Pronto em aprox. <strong>30 min</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="divider toggle-visibility">
+
+                <div class="cart-payment-section toggle-visibility">
+                    <h3 class="section-subtitle">Método de Pagamento</h3>
+                    <div class="payment-options">
+                        <label class="radio-label">
+                            <input type="radio" name="payment" value="pix">
+                            <span class="radio-custom"></span>
+                            PIX
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="payment" value="cartao">
+                            <span class="radio-custom"></span>
+                            Cartão
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="payment" value="dinheiro">
+                            <span class="radio-custom"></span>
+                            Dinheiro
+                        </label>
+                    </div>
+                </div>
+
+                <button class="checkout-main-btn toggle-visibility" onclick="verificarLoginEFinalizar()">Finalizar e
+                    Pagar</button>
+
+                <div class="security-badge toggle-visibility">
+                    <i class="fas fa-lock"></i>
+                    <div class="badge-text">
+                        <span>Pagamento efetuado por meio de gateway externo.</span>
+                        <span>Seus dados estão protegidos.</span>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-col-left footer-nav">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="unidade.html">Unidades</a></li>
+                        <li><a href="fidelidade.html">Fidelidade</a></li>
+                        <li><a href="carrinho.html">Carrinho</a></li>
+                        <li><a href="conta.html">Conta</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col-center footer-brand">
+                    <img src="img/logo-raizes-nordeste.png" alt="Raízes do Nordeste" class="footer-logo-image">
+                </div>
+
+                <div class="footer-col-right footer-contact">
+                    <h4>Contato e Local</h4>
+                    <ul>
+                        <li><i class="fas fa-clock"></i> Seg - Dom: 09h30 às 21h30</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Rua das Rendeiras, 123 - Centro</li>
+                        <li><i class="fab fa-whatsapp"></i>
+                            (85) 99999-1111</li>
+                        <li><i class="fas fa-mobile-alt"></i> Disponível no App, Site e Totem</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2026 Raízes do Nordeste. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/header.js"></script>
+    <script src="js/carrinho.js"></script>
+</body>
+
+</html>

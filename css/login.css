@@ -1,0 +1,133 @@
+/* Estilo inicial do Entrar(Login) */
+.login-body {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('../img/bg-raizes-nordeste.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.login-wrapper {
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-card {
+    background-color: #e5cdab;
+    width: 100%;
+    max-width: 380px;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.login-logo {
+    width: 160px;
+    height: auto;
+    margin-top: -15px;
+}
+
+/* Texto de Boas-vindas */
+.welcome-text {
+    color: #385f35;
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/* Campos de Entrada */
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 2px solid #333;
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+}
+
+.input-group i {
+    color: #71452e;
+    font-size: 18px;
+    margin-right: 12px;
+}
+
+.input-group input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    color: #5A2B15;
+}
+
+/* Link para Esqueceu a Senha */
+.forgot-password {
+    text-align: right;
+    margin-top: -12px;
+    margin-bottom: 25px;
+}
+
+.forgot-password a {
+    color: #262e90;
+    font-size: 13px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.forgot-password a:hover {
+    color: #111654;
+}
+
+/* Botões */
+.login-btn {
+    width: 100%;
+    background-color: #b38b75;
+    color: #222;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.login-btn:hover {
+    background-color: #5f3a26;
+    color: #fff;
+    border: 2.4px solid #111;
+    font-weight: 900;
+}
+
+/* Divisor "OU" */
+.ou-text {
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #583c32;
+    margin: 15px;
+}
+
+/* Selo de Segurança (LGPD) */
+.login-lgpd {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #205B23;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.login-lgpd i {
+    font-size: 18px;
+}

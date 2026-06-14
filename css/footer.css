@@ -1,0 +1,135 @@
+/* Estilo inicial do Rodapé */
+.footer {
+    background-color: #5f3a26; 
+    padding: 40px 20px 20px;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    gap: 15px; 
+}
+
+.footer-col-left,
+.footer-col-center,
+.footer-col-right {
+    flex: 1; 
+}
+
+.footer-col-center {
+    display: flex;
+    justify-content: center;
+}
+
+/* Logo */
+.footer-logo-image {
+    width: 100%;
+    max-width: 160px; 
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+}
+
+/* Título e Listas */
+.footer h4 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; 
+}
+
+.footer ul li {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    color: #ededed;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #ededed;
+    transition: opacity 0.4s;
+}
+
+.footer ul li a.active-footer {
+    color: #eba03d; 
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.footer ul li a:hover {
+    color: #eba03d;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+.footer-bottom p {
+    color: #e8e8e8;
+}
+
+.footer-col-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer-col-right ul {
+    text-align: left;
+}
+
+/* Copyright */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+}
+
+/* Responsividade (Tablet) */
+@media (min-width: 950px) {
+    .footer-col-left {
+        padding-left: 5%; 
+    }
+    .footer-col-right {
+        padding-right: 5%; 
+    }
+}
+
+/* Responsividade (Mobile)  */
+@media (max-width: 678px) {
+    .footer-container {
+        flex-direction: column; 
+        text-align: center;
+        gap: 40px;
+    }
+
+    .footer-col-right {
+        align-items: center; 
+    }
+
+    .footer-col-right ul, 
+    .footer-col-left ul {
+        align-items: center;
+    }
+
+    .footer ul li {
+        justify-content: center;
+    }
+}

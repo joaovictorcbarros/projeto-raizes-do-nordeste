@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes do Nordeste - Programa de Fidelidade</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/fidelidade.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <header class="header">
+            <div class="header-left">
+                <i id="hamburger-icon" class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+                <img src="img/logo-raizes-nordeste.png" alt="Raízes do Nordeste" class="logo-image">
+
+            </div>
+
+            <div class="header-center" id="mobile-menu">
+                <div class="nav-item" onclick="window.location.href='index.html'">
+                    <i class="fas fa-home"></i>
+                    <span>Início</span>
+                </div>
+                <div class="nav-item active" onclick="window.location.href='fidelidade.html'">
+                    <span class="custom-icon icon-fidelidade"></span>
+                    <span>Fidelidade</span>
+                </div>
+                <div class="nav-item" onclick="window.location.href='carrinho.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Carrinho</span>
+                </div>
+                <div class="nav-item" onclick="window.location.href='conta.html'">
+                    <i class="fas fa-user"></i>
+                    <span>Conta</span>
+                </div>
+                <div class="nav-item mobile-only" onclick="window.location.href='login.html'">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrar</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="nav-item desktop-only entrar-btn" onclick="window.location.href='login.html'">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrar</span>
+                </div>
+                <div class="nav-item status-bell">
+                    <i class="fas fa-bell"></i>
+                </div>
+            </div>
+        </header>
+
+        <main class="fidelidade-main-content">
+            <div class="fidelidade-container">
+
+                <h2 class="fidelidade-title">Fidelidade</h2>
+
+                <div class="fidelidade-content-wrapper">
+
+                    <div class="section-group">
+                        <div class="section-header">
+                            <div class="coin-icon-small">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <h3>Saldo CashBack (CoinsRaízes)</h3>
+                        </div>
+
+                        <div class="fidelidade-card">
+                            <p class="text-gray">Ganhe até 15% de cashback em compras e utilize suas CoinsRaízes como
+                                quiser em todo o app-site-totem!</p>
+
+                            <div id="saldo-logado">
+                                <p class="text-balance">Seu saldo atual é: <strong><span id="valor-saldo-fidelidade">R$
+                                            0,00</span></strong> de
+                                    <strong>CoinsRaízes</strong>.
+                                </p>
+                                <span class="text-expiration" id="aviso-validade"><i class="fas fa-info-circle"></i> Saldo válido até 31 de dezembro de<span id="ano-validade">2026</span></span>
+                            </div>
+
+                            <div id="saldo-deslogado">
+                                <p class="text-balance">
+                                    <strong>Entre e veja seus Saldos</strong>
+                                </p>
+                                <span class="text-expiration"><i class="fas fa-info-circle"></i>Veja quando logar seus
+                                    CoinsRaízes vencem</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="section-group">
+                        <div class="section-header">
+                            <i class="fas fa-ticket-alt coupon-header-icon"></i>
+                            <h3>Cupons</h3>
+                        </div>
+
+                        <div class="fidelidade-card card-center">
+                            <div class="card-title-inline">
+                                <i class="fas fa-birthday-cake"></i>
+                                <h4>Mês do seu Aniversário!</h4>
+                            </div>
+                            <p class="text-highlight">15% de desconto para celebrar com a gente.</p>
+                            <button class="btn-brown" onclick="aplicarCupomFidelidade('NIVERCOMRAIZES15OFF')">Aplicar
+                                Cupom</button>
+                        </div>
+
+                        <div class="fidelidade-card card-center">
+                            <div class="card-title-inline">
+                                <i class="fas fa-truck"></i>
+                                <h4>Primeira compra: <span class="text-underline">Frete Grátis</span></h4>
+                            </div>
+                            <p class="text-highlight">Válido apenas para entrega (exceto Pick-Up)</p>
+                            <button class="btn-brown" onclick="aplicarCupomFidelidade('1COMPRANORAIZESFRETEGRATIS')">Aplicar
+                                Cupom</button>
+                        </div>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="security-badge">
+                        <i class="fas fa-lock"></i>
+                        <span>todos seus dados são protegidos</span>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-col-left footer-nav">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="unidade.html">Unidades</a></li>
+                        <li><a href="fidelidade.html">Fidelidade</a></li>
+                        <li><a href="carrinho.html">Carrinho</a></li>
+                        <li><a href="conta.html">Conta</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col-center footer-brand">
+                    <img src="img/logo-raizes-nordeste.png" alt="Raízes do Nordeste" class="footer-logo-image">
+                </div>
+
+                <div class="footer-col-right footer-contact">
+                    <h4>Contato e Local</h4>
+                    <ul>
+                        <li><i class="fas fa-clock"></i> Seg - Dom: 09h30 às 21h30</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Rua das Rendeiras, 123 - Centro</li>
+                        <li><i class="fab fa-whatsapp"></i> (85) 99999-1111</li>
+                        <li><i class="fas fa-mobile-alt"></i> Disponível no App • Site • Totem</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2026 Raízes do Nordeste. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="js/header.js"></script>
+    <script src="js/fidelidade.js"></script>
+</body>
+
+</html>

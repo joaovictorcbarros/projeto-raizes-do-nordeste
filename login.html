@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes do Nordeste - Entrar</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="login-body">
+
+    <div class="login-wrapper">
+        <div class="login-card">
+            <img src="img/logo-raizes-nordeste.png" alt="Raízes do Nordeste" class="login-logo">
+            <h2 class="welcome-text">
+                Seja bem-vindo ao Raízes do Nordeste
+            </h2>
+
+            <form onsubmit="simularLogin(event)">
+
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email-login" placeholder="E-mail" maxlength="80" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-key"></i>
+                    <input type="password" id="senha-login" placeholder="Senha" maxlength="64" required>
+                </div>
+
+                <div class="forgot-password">
+                    <a href="#">Esqueci minha senha</a>
+                </div>
+
+                <button type="submit" class="login-btn">Entrar</button>
+
+                <div class="ou-text">ou</div>
+
+                <button type="button" class="login-btn btn-secondary" onclick="window.location.href='cadastrar.html'">
+                    Cadastrar
+                </button>
+
+            </form>
+
+            <div class="login-lgpd">
+                <i class="fas fa-lock"></i>
+                <span>todos os seus dados são protegidos</span>
+            </div>
+
+            <div style="text-align: right; width: 100%; margin-top: 40px;">
+                <span onclick="document.getElementById('mock-modal').style.display='flex'"
+                    style="cursor: pointer; color: #71452e; font-size: 13px;">
+                    <i class="fas fa-key" style="margin-right: 4px;"></i><span style="text-decoration: underline; font-weight: bold">Acesso Teste</span>
+                </span>
+            </div>
+        </div>
+
+        <div id="mock-modal"
+            style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; align-items: center; justify-content: center;">
+            <div
+                style="background: #eee4d5; padding: 25px; border-radius: 12px; width: 90%; max-width: 350px; text-align: left; position: relative; border: 2px solid #8B4513; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                <i class="fas fa-times" onclick="document.getElementById('mock-modal').style.display='none'"
+                    style="position: absolute; top: 15px; right: 15px; cursor: pointer; font-size: 20px; color: #5f3a26;"></i>
+
+                <h3
+                    style="color: #5f3a26; margin-bottom: 15px; font-size: 18px; display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-user-check"></i> Contas para Testes:
+                </h3>
+
+                <div style="background: #fff; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; cursor: pointer; transition: 0.2s;"
+                    onclick="preencherMock('joao.victor@testemail.com', '12345678')"
+                    onmouseover="this.style.borderColor='#8B4513'" onmouseout="this.style.borderColor='#ddd'">
+                    <strong style="color: #9b6641; font-size: 15px;">Entrar como João:</strong><br>
+                    <span style="font-size: 14px; color: #555;"><strong>Login:</strong>
+                        joao.victor@testemail.com</span><br>
+                    <span style="font-size: 14px; color: #555;"><strong>Senha:</strong> 12345678</span>
+                </div>
+
+                <div style="background: #fff; padding: 12px; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; transition: 0.2s;"
+                    onclick="preencherMock('anne_doe@testemail.com', '123456789')"
+                    onmouseover="this.style.borderColor='#8B4513'" onmouseout="this.style.borderColor='#ddd'">
+                    <strong style="color: #9b6641; font-size: 15px;">Entrar como Anne:</strong><br>
+                    <span style="font-size: 14px; color: #555;"><strong>Login:</strong>
+                        anne_doe@testemail.com</span><br>
+                    <span style="font-size: 14px; color: #555;"><strong>Senha:</strong> 123456789</span>
+                </div>
+
+                <p style="font-size: 12px; color: #444; margin-top: 15px; text-align: center;">*Clique em uma conta para
+                    preencher</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>

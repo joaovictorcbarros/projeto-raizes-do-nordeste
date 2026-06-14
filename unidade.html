@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes do Nordeste - Unidades com Cardápio Dinamico</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/unidade.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <header class="header">
+            <div class="header-left">
+                <i id="hamburger-icon" class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+                <img src="img/logo-raizes-nordeste.png" alt="Raízes do Nordeste" class="logo-image">
+                
+            </div>
+
+            <div class="header-center" id="mobile-menu">
+                <div class="nav-item" onclick="window.location.href='index.html'">
+                    <i class="fas fa-home"></i>
+                    <span>Início</span>
+                </div>
+                <div class="nav-item" onclick="window.location.href='fidelidade.html'">
+                    <span class="custom-icon icon-fidelidade"></span>
+                    <span>Fidelidade</span>
+                </div>
+                <div class="nav-item" onclick="window.location.href='carrinho.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Carrinho</span>
+                </div>
+                <div class="nav-item" onclick="window.location.href='conta.html'">
+                    <i class="fas fa-user"></i>
+                    <span>Conta</span>
+                </div>
+                <div class="nav-item mobile-only" onclick="window.location.href='login.html'">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrar</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="nav-item desktop-only entrar-btn" onclick="window.location.href='login.html'">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrar</span>
+                </div>
+                <div class="nav-item status-bell">
+                    <i class="fas fa-bell"></i>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content-fluid">
+            <section class="locations-wrapper">
+                <div class="locations-container">
+                    <div class="section-top-title">
+                        <span class="custom-unidade-icon"></span>
+                        <h2>Nossas Unidades</h2>
+                    </div>
+
+                    <div class="locations-list">
+                        <div class="location-row">
+                            <div class="loc-card-box">
+                                <div class="loc-card-top">
+                                    <i class="fas fa-map-marker-alt icon-green"></i>
+                                    <h3 class="title-blue">Unidade Centro</h3>
+                                </div>
+                                <button class="loc-btn" onclick="showMenu('centro')">Ver Cardápio</button>
+                            </div>
+                            <div class="loc-text-details">
+                                <p>Rua das Rendeiras, 123 - Centro</p>
+                                <p>Aberto das 08h30 às 21h30</p>
+                                <p>Delivery e Retirada no Local</p>
+                                <p><i class="fab fa-whatsapp" style="color: #205B23; margin-right: 5px;"></i> (85)
+                                    99999-1111</p>
+                            </div>
+                        </div>
+
+                        <div class="location-row">
+                            <div class="loc-card-box">
+                                <div class="loc-card-top">
+                                    <i class="fas fa-map-marker-alt icon-green"></i>
+                                    <h3 class="title-blue">Unidade Norte</h3>
+                                </div>
+                                <button class="loc-btn" onclick="showMenu('norte')">Ver Cardápio</button>
+                            </div>
+                            <div class="loc-text-details">
+                                <p>Av. Mandacaru, 789 - Zona Norte</p>
+                                <p>Aberto das 10h00 às 23h00</p>
+                                <p>Apenas Local - Festas e Feriados</p>
+                                <p><i class="fab fa-whatsapp" style="color: #205B23; margin-right: 5px;"></i> (85)
+                                    99999-2222</p>
+                            </div>
+                        </div>
+
+                        <div class="location-row">
+                            <div class="loc-card-box">
+                                <div class="loc-card-top">
+                                    <i class="fas fa-map-marker-alt icon-green"></i>
+                                    <h3 class="title-blue">Unidade Sul</h3>
+                                </div>
+                                <button class="loc-btn" onclick="showMenu('sul')">Ver Cardápio</button>
+                            </div>
+                            <div class="loc-text-details">
+                                <p>Av. do Sertão, 456 - Zona Sul</p>
+                                <p>Aberto das 8h00 às 22:00</p>
+                                <p>Apenas Delivery</p>
+                                <p><i class="fab fa-whatsapp" style="color: #205B23; margin-right: 5px;"></i> (85)
+                                    99999-3333</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="menu-grid-wrapper" id="menu-section">
+                <div class="menu-container">
+
+                    <div class="menu-header-stacked">
+                        <h2 class="menu-main-title" id="menu-title">Cardápio</h2>
+                        <div class="menu-icon-box">
+                            <i class="fa fa-book-open"></i>
+                        </div>
+                        <div class="menu-divider-bottom"></div>
+                    </div>
+
+                    <div class="product-list-vertical" id="product-list">
+
+                        <div class="product-card-horizontal">
+                            <div class="product-img"
+                                style="background-image: url('img/cuscuz-com-carne.png');">
+                            </div>
+                            <div class="product-info">
+                                <h4>Cuscuz com Carne</h4>
+                                <div class="product-footer">
+                                    <span class="product-price">R$ 15,00</span>
+                                    <button class="add-btn">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card-horizontal">
+                            <div class="product-img"
+                                style="background-image: url('img/pizza-regional-mini.jpg');">
+                            </div>
+                            <div class="product-info">
+                                <h4>Pizza Regional</h4>
+                                <div class="product-footer">
+                                    <span class="product-price">R$ 35,00</span>
+                                    <button class="add-btn">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card-horizontal">
+                            <div class="product-img"
+                                style="background-image: url('img/churrasco-vinagrete.png');">
+                            </div>
+                            <div class="product-info">
+                                <h4>Churrassco com Vinagrete</h4>
+                                <div class="product-footer">
+                                    <span class="product-price">R$ 45,90</span>
+                                    <button class="add-btn">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card-horizontal">
+                            <div class="product-img"
+                                style="background-image: url('img/tapioca-carne-e-pão-de-queijo.png');">
+                            </div>
+                            <div class="product-info">
+                                <h4>Tapioca Recheada e Pães de Queijo</h4>
+                                <div class="product-footer">
+                                    <span class="product-price">R$ 25,00</span>
+                                    <button class="add-btn">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-col-left footer-nav">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a class="active-footer" href="unidade.html">Unidades</a></li>
+                        <li><a href="fidelidade.html">Fidelidade</a></li>
+                        <li><a href="carrinho.html">Carrinho</a></li>
+                        <li><a href="conta.html">Conta</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col-center footer-brand">
+                    <img src="img/logo-raizes-nordeste.png" alt="Raízes do Nordeste" class="footer-logo-image">
+                </div>
+
+                <div class="footer-col-right footer-contact">
+                    <h4>Contato e Local</h4>
+                    <ul>
+                        <li><i class="fas fa-clock"></i> Seg - Dom: 09h30 às 21h30</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Rua das Rendeiras, 123 - Centro</li>
+                        <li><i class="fab fa-whatsapp"></i>
+                            (85) 99999-1111</li>
+                        <li><i class="fas fa-mobile-alt"></i> Disponível no App, Site e Totem</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2026 Raízes do Nordeste. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/header.js"></script>
+    <script src="js/unidade.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+/* Estilo inicial do Cadastrar */
+.cadastrar-body {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+         url('../img/bg-raizes-nordeste.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.cadastrar-wrapper {
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.cadastrar-card {
+    background-color: #e5cdab;
+    width: 100%;
+    max-width: 380px;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.cadastrar-logo {
+    width: 160px;
+    height: auto;
+    margin-top: -15px;
+}
+
+.welcome-text {
+    color: #385f35;
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/* Campos de Entrada */
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 2px solid #333;
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.input-group i {
+    color: #71452e;
+    font-size: 16px;
+    margin-right: 10px;
+    width: 20px;
+}
+
+.input-group input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+    color: #5A2B15;
+}
+
+/* Texto informativo da data */
+.info-text {
+    font-size: 11px;
+    color: #5A2B15;
+    font-style: italic;
+    text-align: left;
+    margin-top: -7px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Checkbox */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-left: -12px;
+    padding: 15px;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.checkbox-group input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+    content: '\f00c';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #205B23;
+    font-size: 14px;
+}
+
+.checkbox-group label {
+    font-size: 12px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.checkbox-group label a {
+    color: #262e90;
+    text-decoration: underline;
+}
+
+.checkbox-group label a:hover {
+    color: #111654;
+}
+
+/* Botões */
+.cadastrar-btn {
+    width: 100%;
+    background-color: #b38b75;
+    color: #222;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cadastrar-btn:hover {
+    background-color: #5f3a26;
+    color: #fff;
+    border: 2.4px solid #111;
+    font-weight: 900;
+}
+
+/* Divisor "OU" */
+.ou-text {
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #583c32;
+    margin: 15px;
+}
+
+/* Segurança (LGPD) */
+.cadastrar-lgpd {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #205B23;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.cadastrar-lgpd i {
+    font-size: 18px;
+}

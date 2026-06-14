@@ -1,0 +1,306 @@
+/* Importando a fonte Nunito */
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* Estilo Geral e Reset */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+/* Estilo do Conteúdo Principal - Simular Pagamento */
+.content-simulacao {
+    width: 100%;
+    max-width: 750px; 
+    margin: 0 auto; 
+    padding: 50px 20px; 
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* Banner no topo e Logo */
+.top-banner {
+    width: 100%;
+    height: 120px;
+    background-color: #004085;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.top-logo {
+    width: 170px;
+    height: 150px;
+    position: absolute;
+    bottom: -50px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+/* Textos e Títulos */
+.page-title {
+    text-align: center;
+    color: #555;
+    width: 100%;
+}
+
+.page-title h2 {
+    font-size: 22px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; 
+}
+
+.page-title h2 i {
+    color: #20b2aa; 
+}
+
+.page-title h3 {
+    font-size: 16px;
+    margin: 5px 0 20px 0;
+    color: #666;
+}
+
+hr {
+    width: 100%; 
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+/* QR CODE e Botão de Copiar */
+.qr-area {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.qr-code-img {
+    width: 160px;
+    height: 160px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    margin: 0 auto 10px auto;
+    display: block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.qr-area p {
+    font-size: 12px;
+    font-weight: 700;
+    color: #555;
+    margin: 5px 0;
+}
+
+.btn-copiar {
+    background: #fff;
+    border: 2px solid #555;
+    border-radius: 20px;
+    padding: 8px 25px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.timer-badge {
+    background: #faf8f5;
+    border: 1px solid #999;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #555;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.timer-badge span {
+    background: #555;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+/* Tabela de Valores */ 
+.value-table {
+    background: #faf8f5;
+    border: 1px solid #999;
+    border-radius: 8px;
+    width: 100%; 
+    max-width: 400px;
+    padding: 15px;
+    box-sizing: border-box; 
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.value-col span {
+    display: block;
+    font-size: 12px;
+    color: #555;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.value-col strong {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Formulário e Validação */ 
+.cpf-input {
+    border: 2px solid #555;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    width: 100%; 
+    max-width: 250px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 20px 0;
+    outline: none;
+}
+
+.btn-simular {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 800;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    width: 100%; 
+    max-width: 300px;
+}
+
+.btn-simular:disabled {
+    background: #a0c4e8;
+    cursor: not-allowed;
+}
+
+.btn-simular:disabled:hover {
+    background-color: #a9cafc;
+}
+
+.btn-simular:hover {
+    background-color: #004085;
+}
+
+.lgpd-check {
+    font-size: 14px;
+    font-weight: 800;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Selo de Segurança (LGPD) */
+.security-badges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 14px;
+    color: #1b5e20;
+    font-weight: 800;
+    margin-top: 50px;
+    flex-wrap: wrap; 
+}
+
+.security-badges .divider {
+    height: 20px;
+    width: 1px;
+    background-color: #ccc;
+}
+
+/* Pop-up de Sucesso */
+.modal-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-popup {
+    background-color: #f8f9fa; 
+    width: 90%;
+    max-width: 450px;
+    border-radius: 4px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.modal-topo {
+    background-color: #003b73; 
+    color: #f2a900; 
+    text-align: left;
+    padding: 12px 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.modal-corpo {
+    padding: 40px 20px;
+    color: #333333; 
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+/* Responsividade (Mobile) */
+@media (max-width: 480px) {
+    .modal-corpo {
+        font-size: 15px; 
+        padding: 30px 10px;
+    }
+    
+    .modal-topo {
+        font-size: 18px;
+    }
+}
