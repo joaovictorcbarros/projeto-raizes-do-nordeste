@@ -46,5 +46,5 @@ Para testar os fluxos principais do projeto, sem a necessidade de criar um cadas
 
 ##  Como acessar o projeto? 
 
-[Acesse o projeto clicando aqui](https://joaovictorcbarros.github.io/projeto-raizes-do-nordeste/)
+Acesse o projeto clicando no link: https://joaovictorcbarros.github.io/projeto-raizes-do-nordeste/
 
