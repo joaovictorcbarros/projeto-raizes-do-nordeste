@@ -47,4 +47,4 @@ Para testar os fluxos principais do projeto, sem a necessidade de criar um cadas
 3. No Pop-up que abrir, selecione um dos perfis já pré-configurados **(João ou Anne)** e por fim clique em **Entrar**.
 4. Navegue pelas opções de cardápio, fidelidade, carrinho e simulação de pagamento, do checkout até a entrega do pedido.
 
-## **[Para testar o projeto clique aqui](COLE_SEU_LINK_DO_GITHUB_PAGES_AQUI)**
+**[Para testar o projeto clique aqui](COLE_SEU_LINK_DO_GITHUB_PAGES_AQUI)**
