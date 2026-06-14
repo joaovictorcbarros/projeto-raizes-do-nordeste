@@ -1,8 +1,7 @@
-# 🌵 Raízes do Nordeste -  Projeto Front-End
+# 🌵 Raízes do Nordeste - Projeto Front-End
 
 Este Projeto Multidisciplinar foi desenvolvido para atender às demandas de uma rede de lanchonetes em expansão. A aplicação tem como foco fornecer uma interface clara, coerente e otimizada para múltiplos canais de atendimento.
 
----
 
 ##  Funcionalidades e Requisitos Atendidos
 
@@ -16,7 +15,6 @@ A interface foi projetada para garantir uma excelente jornada do usuário, conte
 * **Sistema de Fidelidade:** Acúmulo e uso de "CoinsRaízes" renderizados dinamicamente na conta do cliente.
 * **Design Mobile-First:** Responsividade total para adaptação em smartphones, tablets e desktops (Web/App/Totem).
 
----
 
 ##  Tecnologias Utilizadas
 
@@ -24,7 +22,6 @@ A interface foi projetada para garantir uma excelente jornada do usuário, conte
 * **CSS3:** Estilização global e media queries para responsividade.
 * **JavaScript:** Lógica de negócio, validação de formulários, manipulação do DOM e persistência de dados utilizando a API do `localStorage`.
 
----
 
 ##  Créditos e Recursos Visuais
 
@@ -37,7 +34,6 @@ Para a construção da identidade visual e interface deste projeto, foram utiliz
   * Biblioteca principal de ícones vetoriais: [FontAwesome](https://fontawesome.com/)
   * Ícones personalizados específicos: [Icon-Icons](https://icon-icons.com/pt/)
 
----
 
 ##  Como testar o projeto? 
 
