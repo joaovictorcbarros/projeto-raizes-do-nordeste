@@ -33,7 +33,7 @@ A interface foi projetada para garantir uma excelente jornada do usuário, conte
 Para testar os fluxos principais do projeto, sem a necessidade de criar um cadastro do zero, siga os passos abaixo:
 1. Acesse a tela de **Entrar**.
 2. Clique na opção **"Acesso Teste"** no canto inferior direito.
-3. No Pop-up que abrir, selecione um dos perfis já pré-configurados (João ou Anne) e por fim clique em **Entrar**.
+3. No Pop-up que abrir, selecione um dos perfis já pré-configurados **(João ou Anne)** e por fim clique em **Entrar**.
 4. Navegue pelas opções de cardápio, fidelidade, carrinho e simulação de pagamento, do checkout até a entrega do pedido.
 
 ---
