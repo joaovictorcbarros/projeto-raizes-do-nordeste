@@ -75,9 +75,6 @@ body {
 
 /* Selo de Segurança (LGPD) */
 .security-badges {
-    position: absolute;
-    bottom: 60px;
-    left: 0;
     width: 100%;
     display: flex;
     align-items: center;
@@ -87,6 +84,7 @@ body {
     color: #1b5e20;
     font-weight: 800;
     flex-wrap: wrap;
+    margin-top: 50px; 
 }
 
 .security-badges .divider {
@@ -112,7 +110,7 @@ body {
         margin-bottom: 40px;
     }
     .security-badges {
-        bottom: 40px;
+        margin-top: 40px;
     }
 }
 
@@ -132,7 +130,7 @@ body {
         margin-bottom: 10px;
     }
     .security-badges {
-        bottom: 30px;
+        margin-top: 50px;
         font-size: 12px;
         gap: 10px; 
     }
