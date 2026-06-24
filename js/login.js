@@ -1,4 +1,4 @@
-// MockDados para contas de 'Acesso Teste'
+// Base de dados teste para as contas
 const usuariosMock = [
     {
         email: 'joao.victor@testemail.com',
@@ -37,7 +37,7 @@ function preencherMock(email, senha) {
 
 // Validação unificada para dados Mockados ou informados via cadastro
 function simularLogin(event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     const emailInput = document.getElementById('email-login').value.trim();
     const senhaInput = document.getElementById('senha-login').value.trim();
@@ -46,8 +46,8 @@ function simularLogin(event) {
     const usuarioFake = usuariosMock.find(u => u.email === emailInput && u.senha === senhaInput);
 
     if (usuarioFake) {
-        localStorage.setItem('usuarioLogadoAutenticado', 'true'); 
-        localStorage.setItem('usuarioLogado', usuarioFake.nomeCompleto); 
+        localStorage.setItem('usuarioLogadoAutenticado', 'true');
+        localStorage.setItem('usuarioLogado', usuarioFake.nomeCompleto);
         localStorage.setItem('apelidoUsuario', usuarioFake.apelido);
         localStorage.setItem('nomeCompleto', usuarioFake.nomeCompleto);
         localStorage.setItem('usuarioCPF', usuarioFake.cpf);
@@ -55,32 +55,31 @@ function simularLogin(event) {
         localStorage.setItem('usuarioEmail', usuarioFake.email);
         localStorage.setItem('dataNascimento', usuarioFake.dataNascimento);
         localStorage.setItem('usuarioEndereco', usuarioFake.endereco);
-        
+
         localStorage.setItem('numeroPedidoSimulado', usuarioFake.pedido);
-        localStorage.setItem('numeroPedidoFixo', usuarioFake.pedido); 
-        localStorage.setItem('fotoPerfilUsuario', usuarioFake.foto); 
+        localStorage.setItem('numeroPedidoFixo', usuarioFake.pedido);
+        localStorage.setItem('fotoPerfilUsuario', usuarioFake.foto);
         localStorage.setItem('saldoCoinsUsuario', usuarioFake.saldo);
 
         window.location.href = 'index.html';
-        return; 
+        return;
     }
 
-    // Cadastro Manual 
+    // Cadastro Manual
     const emailCadastrado = localStorage.getItem('usuarioEmail');
     const senhaCadastrada = localStorage.getItem('usuarioSenha');
     let loginManualValido = false;
 
-    // Verifica se o e-mail cadastrado existe e se ambos conferem
     if (emailCadastrado && emailInput === emailCadastrado) {
         if (senhaCadastrada && senhaInput === senhaCadastrada) {
-            loginManualValido = true;
+            loginManualValido = true; 
         }
     }
 
     if (loginManualValido) {
         localStorage.setItem('usuarioLogadoAutenticado', 'true');
 
-        // Remove todos dados do mock teste, gerando os dados do novo pedido 
+        // Remove todos dados do mock, gerando os dados do novo pedido
         localStorage.removeItem('numeroPedidoFixo');
         localStorage.removeItem('numeroPedidoSimulado');
         localStorage.removeItem('fotoPerfilUsuario');
@@ -92,5 +91,6 @@ function simularLogin(event) {
         window.location.href = 'index.html';
     } else {
         alert("E-mail não cadastrado ou senha incorreta. Cadastre-se ou use um 'Acesso Teste'.");
+
     }
 }

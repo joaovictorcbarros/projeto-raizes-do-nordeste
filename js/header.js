@@ -46,23 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Deslogar(Logout)
+// Deslogar (Logout)
 function realizarLogout() {
-    // Remove dados de autenticação ao deslogar
+    // Remove apenas o status de autenticação (Desloga o usuário)
     localStorage.removeItem('usuarioLogadoAutenticado');
 
-    // Remove rastros dos Dados Mockados do João e Anne
+    // Remove apenas dados temporários de sessão dos usuários teste (foto e número de pedido)
     localStorage.removeItem('numeroPedidoFixo');
     localStorage.removeItem('numeroPedidoSimulado');
     localStorage.removeItem('fotoPerfilUsuario');
-    localStorage.removeItem('usuarioCPF');
-    localStorage.removeItem('usuarioTelefone');
-    localStorage.removeItem('usuarioEndereco');
-    localStorage.removeItem('saldoCoinsUsuario');
-    
-    // Reseta os Cupons
-    localStorage.removeItem('cupomNiverUsado');
-    localStorage.removeItem('cupomPrimeiraCompraUsado');
 
     // Recarrega a página inicial deslogado
     window.location.href = 'index.html';

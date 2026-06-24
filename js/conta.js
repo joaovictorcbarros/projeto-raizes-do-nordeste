@@ -85,7 +85,15 @@ function carregarDadosIniciais() {
         inputEmail.setAttribute('readonly', 'true');
     }
     if (inputData) {
-        inputData.value = localStorage.getItem('dataNascimento') || '';
+        let dataSalva = localStorage.getItem('dataNascimento') || '';
+        
+        if (dataSalva.includes('-')) {
+            const partes = dataSalva.split('-');
+            dataSalva = `${partes[2]}/${partes[1]}/${partes[0]}`;
+        }
+        
+        inputData.type = 'text'; 
+        inputData.value = dataSalva;
         inputData.setAttribute('readonly', 'true');
     }
     if (inputTelefone) {
@@ -122,7 +130,7 @@ function configurarBotoesEditar() {
         e.preventDefault();
         
         if (!localStorage.getItem('usuarioLogadoAutenticado')) {
-            alert("Faça login para editar o seu perfil.");
+            alert("Faça login para editar os dados da sua conta.");
             return;
         }
 
@@ -246,11 +254,41 @@ window.mascaraTelefone = function (input) {
 
 // Excluir Conta
 function excluirConta() {
+    // Verifica se o usuário está logado antes, caso contrário não exlui conta
+    if (!localStorage.getItem('usuarioLogadoAutenticado')) {
+        alert("Você precisa fazer login para efetuar a exclusão da conta.");
+        return; 
+    }
+
+    // Se usuário estiver autenticado, segue com a confirmação normal
     const confirmacao = confirm("Tem certeza absoluta que deseja excluir sua conta?\n\nVocê perderá todos os seus dados e o seu saldo de CoinsRaízes. Esta ação não pode ser desfeita.");
     
     if (confirmacao) {
         localStorage.clear(); 
-        alert("Sua conta foi excluída com sucesso. Lamentamos vê-lo partir do Raízes do Nordeste!");
+        alert("Sua conta foi excluída com sucesso.\n\nLamentamos vê-lo partir do Raízes do Nordeste! 😢");
         window.location.href = 'index.html'; 
     }
+}
+
+// Volta o campo para texto e formata para DD/MM/AAAA ao editar
+window.formatarDataBr = function (input) {
+    if (input.value && input.value.includes('-')) {
+        const partes = input.value.split('-'); 
+        input.type = 'text'; 
+        input.value = `${partes[2]}/${partes[1]}/${partes[0]}`;
+    } else {
+        input.type = 'text'; 
+    }
+}
+
+// Prepara o campo para abrir o calendário nativo corretamente
+window.prepararCalendario = function (input) {
+    if (input.hasAttribute('readonly')) return;
+
+    if (input.value && input.value.includes('/')) {
+        const partes = input.value.split('/'); 
+        input.value = `${partes[2]}-${partes[1]}-${partes[0]}`;
+    }
+
+    input.type = 'date';
 }
