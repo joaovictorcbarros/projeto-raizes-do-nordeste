@@ -27,6 +27,7 @@ function simularCadastro(event) {
     // Salva os dados no Local Storage
     localStorage.setItem('nomeCompleto', nomeInput);
     localStorage.setItem('usuarioEmail', emailInput);
+    localStorage.setItem('usuarioSenha', senhaInput);
     localStorage.setItem('usuarioLogado', nomeInput.split(' ')[0]); 
     localStorage.setItem('usuarioLogadoAutenticado', 'true'); 
     localStorage.setItem('saldoCoinsUsuario', '0.00');
