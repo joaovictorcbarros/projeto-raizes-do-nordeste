@@ -39,30 +39,24 @@ function simularCadastro(event) {
 
 // Volta o campo para texto e formata para DD/MM/AAAA 
 window.formatarDataBr = function (input) {
-    // 1. Salva o que o calendário gerou antes do navegador limpar
     let dataEscolhida = input.value; 
     
-    // 2. Transforma em texto
     input.type = 'text'; 
-    
-    // 3. Converte para o padrão BR e devolve pro campo
+
     if (dataEscolhida && dataEscolhida.includes('-')) {
         const partes = dataEscolhida.split('-'); 
         input.value = `${partes[2]}/${partes[1]}/${partes[0]}`;
     } else {
-        input.value = dataEscolhida; // Se estiver vazio, devolve vazio
+        input.value = dataEscolhida; 
     }
 }
 
 // Prepara o campo para abrir o calendário nativo corretamente
 window.prepararCalendario = function (input) {
-    // 1. Guarda a data que está na tela antes do navegador limpar
     let dataSalva = input.value;
-
-    // 2. Muda para o tipo calendário (aqui o navegador limpa o campo sozinho)
+    
     input.type = 'date';
-
-    // 3. Se tinha uma data no formato BR, inverte para o calendário ler e devolve pro campo
+    
     if (dataSalva && dataSalva.includes('/')) {
         const partes = dataSalva.split('/'); 
         input.value = `${partes[2]}-${partes[1]}-${partes[0]}`;
