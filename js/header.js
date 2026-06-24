@@ -48,10 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Deslogar (Logout)
 function realizarLogout() {
-    // Remove apenas o status de autenticação (Desloga o usuário)
+    // Remove apenas o status de autenticação Deslogando o usuário
     localStorage.removeItem('usuarioLogadoAutenticado');
 
-    // Remove apenas dados temporários de sessão dos usuários teste (foto e número de pedido)
+    // Remove apenas dados temporários de sessão de conta teste 
     localStorage.removeItem('numeroPedidoFixo');
     localStorage.removeItem('numeroPedidoSimulado');
     localStorage.removeItem('fotoPerfilUsuario');
