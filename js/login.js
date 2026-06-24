@@ -1,4 +1,4 @@
-// Base de dados teste para as contas
+// MockDados para contas de 'Acesso Teste'
 const usuariosMock = [
     {
         email: 'joao.victor@testemail.com',
@@ -70,26 +70,25 @@ function simularLogin(event) {
     const senhaCadastrada = localStorage.getItem('usuarioSenha');
     let loginManualValido = false;
 
-    if (emailCadastrado && emailInput === emailCadastrado) { 
-        if (senhaCadastrada) {
-            if (senhaInput === senhaCadastrada) loginManualValido = true;
-        } else {
-            if (senhaInput !== "") loginManualValido = true;
+    // Verifica se o e-mail cadastrado existe e se ambos conferem
+    if (emailCadastrado && emailInput === emailCadastrado) {
+        if (senhaCadastrada && senhaInput === senhaCadastrada) {
+            loginManualValido = true;
         }
     }
 
     if (loginManualValido) {
-        localStorage.setItem('usuarioLogadoAutenticado', 'true'); 
-        
-        // Remove todos dados do mock, gerando os dados do novo pedido 
+        localStorage.setItem('usuarioLogadoAutenticado', 'true');
+
+        // Remove todos dados do mock teste, gerando os dados do novo pedido 
         localStorage.removeItem('numeroPedidoFixo');
         localStorage.removeItem('numeroPedidoSimulado');
         localStorage.removeItem('fotoPerfilUsuario');
-        
-        if(!localStorage.getItem('saldoCoinsUsuario')) {
+
+        if (!localStorage.getItem('saldoCoinsUsuario')) {
             localStorage.setItem('saldoCoinsUsuario', '0.00');
         }
-        
+
         window.location.href = 'index.html';
     } else {
         alert("E-mail não cadastrado ou senha incorreta. Cadastre-se ou use um 'Acesso Teste'.");
